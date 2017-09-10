@@ -11,6 +11,11 @@ This package provides a convinient react component for using [Google's Material 
 * Supports Material UI [color pallet](https://www.materialui.co/colors) of the shelf.
 
 ## Usage
+Import module using the following statement.
+
+```
+import MaterialIcon, {colorPallet} from 'material-icons-react';
+```
 
 1. Rendering an icon is straightforward.
 
