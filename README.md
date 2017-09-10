@@ -41,6 +41,7 @@ import MaterialIcon, {colorPallet} from 'material-icons-react';
 * Using [Material UI color pallet](https://www.materialui.co/colors).
 ```
 <MaterialIcon icon="dashboard" color={colorPallet.amber._200} />
+<MaterialIcon icon="dashboard" color={colorPallet.amber.A700} />
 ```
 * Using a custom color.
 ```
