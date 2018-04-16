@@ -2,15 +2,16 @@
 
 ## Introduction
 
-This package provides a convinient react component for using [Google's Material Icons](https://material.io/icons/) in your react application.
+This package provides a convenient react component for using [Google's Material Icons](https://material.io/icons/) in your react application.
 
 ## Features
 
 * Follows [Material design guidelines](https://google.github.io/material-design-icons/#icon-font-for-the-web)
 * Highly customizable
-* Supports Material UI [color pallet](https://www.materialui.co/colors) of the shelf.
+* Supports Material UI [color palette](https://www.materialui.co/colors) off the shelf.
 
 ## Usage
+
 Import module using the following statement.
 
 ```
