@@ -15,7 +15,7 @@ This package provides a convenient react component for using [Google's Material 
 Import module using the following statement.
 
 ```
-import MaterialIcon, {colorPallet} from 'material-icons-react';
+import MaterialIcon, {colorPalette} from 'material-icons-react';
 ```
 
 1. Rendering an icon is straightforward.
@@ -39,10 +39,10 @@ import MaterialIcon, {colorPallet} from 'material-icons-react';
 <MaterialIcon icon="dashboard" inactive />
 ```
 5. Change the color of an icon.
-* Using [Material UI color pallet](https://www.materialui.co/colors).
+* Using [Material UI color palette](https://www.materialui.co/colors).
 ```
-<MaterialIcon icon="dashboard" color={colorPallet.amber._200} />
-<MaterialIcon icon="dashboard" color={colorPallet.amber.A700} />
+<MaterialIcon icon="dashboard" color={colorPalette.amber._200} />
+<MaterialIcon icon="dashboard" color={colorPalette.amber.A700} />
 ```
 * Using a custom color.
 ```
