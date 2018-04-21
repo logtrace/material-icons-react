@@ -1,7 +1,6 @@
 import React from 'react';
 import './index.css';
 import { sizes, light, dark, mdInactive } from './config/mappings'
-import { colorPalette } from './palette';
 
 class MaterialIcon extends React.Component {
     render() {
