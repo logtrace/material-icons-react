@@ -17,10 +17,10 @@ const MaterialIcon = ({ icon, size, invert, inactive, color, style }) => {
 }
 
 MaterialIcon.propTypes = {
-  icon: PropTypes.string.isRequired,
-  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  invert: PropTypes.boolean,
-  inactive: PropTypes.boolean
+    icon: PropTypes.string.isRequired,
+    size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    invert: PropTypes.boolean,
+    inactive: PropTypes.boolean
 };
 
 export default MaterialIcon;
