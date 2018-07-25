@@ -53,6 +53,7 @@
     "react-addons-test-utils": "^15.0.0",
     "react-dom": "^15.0.0",
     "react-test-renderer": "^15.6.1",
+    "semantic-release": "^15.8.1",
     "sinon": "^1.17.3"
   },
   "peerDependencies": {
@@ -78,8 +79,11 @@
     "mocha": "^2.4.5",
     "nodemon": "^1.9.1",
     "react": "^15.0.0",
-    "react-addons-test-utils": "^15.0.0",
-    "react-dom": "^15.0.0",
-    "sinon": "^1.17.3"
+    "react-dom": "^15.0.0"
+  },
+  "release": {
+    "verifyConditions": {
+      "path": "./scripts/verifyConditions.js"
+    }
   }
 }
