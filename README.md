@@ -1,5 +1,13 @@
 # material-icons-react
 
+[![Build Status](https://semaphoreci.com/api/v1/logtrace/material-icons-react/branches/remove-mocha-from-deps/shields_badge.svg)](https://semaphoreci.com/logtrace/material-icons-react)
+
+## NOTE: Version 1.0.1 release
+
+* Spelling mistakes corrected
+* Proptypes added
+* Unwanted dependencies for production is removed from `dependencies`
+
 ## Introduction
 
 This package provides a convenient react component for using [Google's Material Icons](https://material.io/icons/) in your react application.
@@ -56,6 +64,10 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 | small | 24px |
 | medium| 36px |
 | large | 48px |
+
+## Contributions
+
+Please feel free to create PR for any improvements and contributions.
 
 ## License
 
