@@ -1,6 +1,6 @@
 # material-icons-react
 
-[![Build Status](https://semaphoreci.com/api/v1/logtrace/material-icons-react/branches/remove-mocha-from-deps/badge.svg)](https://semaphoreci.com/logtrace/material-icons-react)
+[![Build Status](https://semaphoreci.com/api/v1/logtrace/material-icons-react/branches/remove-mocha-from-deps/shields_badge.svg)](https://semaphoreci.com/logtrace/material-icons-react)
 
 ## NOTE: Version 1.0.1 release
 
