@@ -1,6 +1,6 @@
 {
   "name": "material-icons-react",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Google material icons implementation for React",
   "repository": {
     "type": "git",
@@ -28,7 +28,8 @@
     "lintfix": "eslint ./src --fix",
     "testonly": "mocha $npm_package_options_mocha",
     "test": "npm run lint && npm run testonly",
-    "test-watch": "npm run testonly -- --watch --watch-extensions js"
+    "test-watch": "npm run testonly -- --watch --watch-extensions js",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "babel-cli": "^6.6.4",
@@ -64,10 +65,5 @@
     "prop-types": "^15.6.1",
     "react": "^15.0.0",
     "react-dom": "^15.0.0"
-  },
-  "release": {
-    "verifyConditions": {
-      "path": "./scripts/verifyConditions.js"
-    }
   }
 }
