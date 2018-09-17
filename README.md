@@ -60,6 +60,39 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 <MaterialIcon icon="dashboard" color='#7bb92f' />
 ```
 
+## Showing a preloader until the icon is rendered(For slow connections)
+1. CSS
+
+```
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #921515;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+```
+
+2. Preloader element
+
+```
+let loader = <div className="lds-ripple"><div></div><div></div></div>
+```
+
+3. Icon
+
+```
+<MaterialIcon icon="dashboard" preloader={loader} />
+```
 
 ## Icon size matrix
 | Alias | Size |
