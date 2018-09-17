@@ -1,0 +1,17 @@
+{
+  "sessions": [
+    {
+      "id": "6d48b963-c09f-418a-9c33-45977096d663",
+      "tabLayout": {
+        "type": "stack",
+        "width": 100,
+        "height": 100,
+        "tabs": [],
+        "subItems": [],
+        "activeItemIndex": 0
+      },
+      "lastUsed": 1532597970240,
+      "selectedTabId": null
+    }
+  ]
+}

@@ -1,12 +1,15 @@
 # material-icons-react
 
-[![Build Status](https://semaphoreci.com/api/v1/logtrace/material-icons-react/branches/remove-mocha-from-deps/shields_badge.svg)](https://semaphoreci.com/logtrace/material-icons-react)
+[![Build Status](https://semaphoreci.com/api/v1/logtrace/material-icons-react/branches/master/shields_badge.svg)](https://semaphoreci.com/logtrace/material-icons-react)
 
-## NOTE: Version 1.0.1 release
+## NOTE: Version 1.0.3 release
 
-* Spelling mistakes corrected
-* Proptypes added
-* Unwanted dependencies for production is removed from `dependencies`
+* Demo app added
+* Fix for [#1](https://github.com/logtrace/material-icons-react/issues/1)
+* Fix for [#11](https://github.com/logtrace/material-icons-react/issues/11)
+* Fix for [#12](https://github.com/logtrace/material-icons-react/issues/12)
+* Fix for [#13](https://github.com/logtrace/material-icons-react/issues/13)
+* Passing in `className` prop will replace the default icon styles, defaultColor and inactive styles. Own styles for these should be provided if className prop is defined.
 
 ## Introduction
 
@@ -55,6 +58,40 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 * Using a custom color.
 ```
 <MaterialIcon icon="dashboard" color='#7bb92f' />
+```
+
+## Showing a preloader until the icon is rendered(For slow connections)
+1. CSS
+
+```
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #921515;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+```
+
+2. Preloader element
+
+```
+let loader = <div className="lds-ripple"><div></div><div></div></div>
+```
+
+3. Icon
+
+```
+<MaterialIcon icon="dashboard" preloader={loader} />
 ```
 
 ## Icon size matrix

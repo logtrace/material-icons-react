@@ -1,19 +1,62 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import WebFont from 'webfontloader';
 
 import './index.css';
 import { sizes, light, dark, mdInactive } from './config/mappings';
 
-const MaterialIcon = ({ icon, size, invert, inactive, color, style }) => {
-    const sizeMapped = sizes[size] || parseInt(size) || sizes['small'];
-    const defaultColor = (invert && 'invert') ? light : dark;
-    const inactiveColor = (inactive && 'inactive') ? mdInactive : '';
-    const propStyle = style || {};
-    const styleOverride = Object.assign(propStyle, {color: color ? color : '', fontSize: sizeMapped});
-    
-    return (
-        <i className={`material-icons ${sizeMapped} ${defaultColor} ${inactiveColor}`} style={styleOverride} >{icon}</i>
-    )
+class MaterialIcon extends Component {
+    constructor(props) {
+        super(props);
+
+        const {preloader} = this.props;
+        
+        this.state = {
+            element: preloader
+        }
+
+        this.onFontActive = this.onFontActive.bind(this);
+        this.processProps = this.processProps.bind(this);
+
+        WebFont.load({
+            google: {
+                families: ['Material+Icons']
+            },
+            timeout:5000,
+            fontactive: this.onFontActive
+        })
+    }
+
+    componentDidMount() {
+
+    }
+
+    onFontActive(fontFamily, fvd) {
+        const {size, invert, inactive, style, className, icon, color, ...other} = this.processProps();
+
+        this.setState({element: <i {...other} className={clsName} style={styleOverride} >{icon}</i>})
+    }
+
+    processProps() {
+        const {size, invert, inactive, style, className, color, icon, ...other} = this.props;
+
+        const sizeMapped = sizes[size] || parseInt(size) || sizes['small'];
+        const defaultColor = (invert && 'invert') ? light : dark;
+        const inactiveColor = (inactive && 'inactive') ? mdInactive : '';
+        const propStyle = style || {};
+        const styleOverride = Object.assign(propStyle, {color: color ? color : '', fontSize: sizeMapped});
+        const clsName = className || `material-icons ${sizeMapped} ${defaultColor} ${inactiveColor}`;
+
+        return {
+            icon, sizeMapped, defaultColor, inactiveColor, propStyle, styleOverride, clsName, ...other
+        }
+    }
+
+    render() {
+        const {sizeMapped, defaultColor, inactiveColor, propStyle, styleOverride, clsName, ...other} = this.processProps();
+
+        return (this.state.element || <i {...other} className={clsName} style={styleOverride} ></i>)
+    }
 }
 
 MaterialIcon.propTypes = {
