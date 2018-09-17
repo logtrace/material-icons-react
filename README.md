@@ -1,12 +1,15 @@
 # material-icons-react
 
-[![Build Status](https://semaphoreci.com/api/v1/logtrace/material-icons-react/branches/remove-mocha-from-deps/shields_badge.svg)](https://semaphoreci.com/logtrace/material-icons-react)
+[![Build Status](https://semaphoreci.com/api/v1/logtrace/material-icons-react/branches/master/shields_badge.svg)](https://semaphoreci.com/logtrace/material-icons-react)
 
-## NOTE: Version 1.0.1 release
+## NOTE: Version 1.0.3 release
 
-* Spelling mistakes corrected
-* Proptypes added
-* Unwanted dependencies for production is removed from `dependencies`
+* Demo app added
+* Fix for [#1](https://github.com/logtrace/material-icons-react/issues/1)
+* Fix for [#11](https://github.com/logtrace/material-icons-react/issues/11)
+* Fix for [#12](https://github.com/logtrace/material-icons-react/issues/12)
+* Fix for [#13](https://github.com/logtrace/material-icons-react/issues/13)
+* Passing in `className` prop will replace the default icon styles, defaultColor and inactive styles. Own styles for these should be provided if className prop is defined.
 
 ## Introduction
 
@@ -56,6 +59,7 @@ import MaterialIcon, {colorPalette} from 'material-icons-react';
 ```
 <MaterialIcon icon="dashboard" color='#7bb92f' />
 ```
+
 
 ## Icon size matrix
 | Alias | Size |
