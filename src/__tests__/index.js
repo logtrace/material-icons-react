@@ -6,68 +6,79 @@ import sinon from 'sinon';
 
 import MaterialIcon from '../index';
 
-const loadIconAndValidateBasic = (props) => {
-    const wrapper = shallow(<MaterialIcon {...props} />);
-    expect(wrapper.find('.material-icons')).to.have.length(1);
+const loadIcon = (props) => {
+    const wrapper = mount(<MaterialIcon {...props} />);
+    
     return wrapper;
 }
-
-const loadAndValidateWithIcon = (props) => {
-    const wrapper = loadIconAndValidateBasic(props);
-    expect(wrapper.find('.material-icons').text()).to.equal('face');
-    return wrapper;
-}
-
-describe('MaterialIcon renders without any props', () => {
-    it('to have an `i`', () => {
-        loadIconAndValidateBasic();
-    });
-});
-
-describe('MaterialIcon renders with icon prop', () => {
-    it('to have an `i` with class md-24 by default', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face' });
-        expect(wrapper.find('.material-icons').hasClass('md-24')).to.equal(true);
-    });
-
-    it('to have an `i`  with size prop overridden to medium', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face', size: 'medium' });
-        expect(wrapper.find('.material-icons').hasClass('md-36')).to.equal(true);
-    });
-});
 
 describe('MaterialIcon renders', () => {
-    it('to have an `i` with dark color by default', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face' });
+    it('with an `i`', () => {
+        const wrapper = loadIcon({icon: 'face'})
+    
+        expect(wrapper.find('i')).to.be.not.null
+    });
+
+    it('with the icon prop', () => {
+        const wrapper = loadIcon({icon: 'face'})
+    
+        expect(wrapper.props().icon).to.equal('face');
+    });
+
+    it('with class md-24 by default', async () => {
+        const wrapper = loadIcon({ icon: 'face' });
+        
+        expect(wrapper.find('i').hasClass('md-24')).to.equal(true);
+    });
+
+    it('with size prop overridden to medium', async () => {
+        const wrapper = loadIcon({ icon: 'face', size: 'medium' });
+        
+        expect(wrapper.find('i').hasClass('md-36')).to.equal(true);
+    });
+
+    it('with dark color by default', () => {
+        const wrapper = loadIcon({ icon: 'face' });
         expect(wrapper.find('.material-icons').hasClass('md-dark')).to.equal(true);
     });
 
-    it('to have an `i`  with light color when inverted', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face', invert: true });
+    it('with light color when inverted', () => {
+        const wrapper = loadIcon({ icon: 'face', invert: true });
         expect(wrapper.find('.material-icons').hasClass('md-light')).to.equal(true);
     });
-});
 
-describe('MaterialIcon renders', () => {
-    it('to have an `i` with active state by default', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face' });
+    it('with active state by default', () => {
+        const wrapper = loadIcon({ icon: 'face' });
         expect(wrapper.find('.material-icons').hasClass('md-inactive')).to.equal(false);
     });
 
-    it('to have an `i`  with `md-inactive` when inactive', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face', inactive: true });
+    it('with `md-inactive` when inactive', () => {
+        const wrapper = loadIcon({ icon: 'face', inactive: true });
         expect(wrapper.find('.material-icons').hasClass('md-inactive')).to.equal(true);
     });
 
-    it('to have an `i` with active state by default when inverted', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face', invert: true });
+    it('with active state by default when inverted', () => {
+        const wrapper = loadIcon({ icon: 'face', invert: true });
         expect(wrapper.find('.material-icons').hasClass('md-light')).to.equal(true);
         expect(wrapper.find('.material-icons').hasClass('md-inactive')).to.equal(false);
     });
 
-    it('to have an `i`  with `md-inactive` and `md-light` when inactive and inverted', () => {
-        const wrapper = loadAndValidateWithIcon({ icon: 'face', invert: true, inactive: true });
+    it('with `md-inactive` and `md-light` when inactive and inverted', () => {
+        const wrapper = loadIcon({ icon: 'face', invert: true, inactive: true });
         expect(wrapper.find('.material-icons').hasClass('md-light')).to.equal(true);
         expect(wrapper.find('.material-icons').hasClass('md-inactive')).to.equal(true);
+    });
+
+    it('with default classes overriden when className prop provided', () => {
+        const wrapper = loadIcon({ icon: 'face', className: 'test-class-name' });
+
+        expect(wrapper.find('i').hasClass('test-class-name')).to.equal(true);
+    });
+
+    it('with custom props available', () => {
+        const wrapper = loadIcon({ icon: 'face', testProp: 'custom-prop'});
+
+        expect(wrapper.props().testProp).to.be.not.null
+        expect(wrapper.props().testProp).to.equal('custom-prop')
     });
 });

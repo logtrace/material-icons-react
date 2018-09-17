@@ -16,7 +16,9 @@
     "react-component",
     "react",
     "material-icons",
-    "google"
+    "material design",
+    "google",
+    "material-ui"
   ],
   "options": {
     "mocha": "--require ignore-styles --require scripts/mocha_runner src/**/__tests__/**/*.js"
@@ -64,6 +66,7 @@
   "dependencies": {
     "prop-types": "^15.6.1",
     "react": "^15.0.0",
-    "react-dom": "^15.0.0"
+    "react-dom": "^15.0.0",
+    "webfontloader": "^1.6.28"
   }
 }
