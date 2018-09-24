@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "material-icons-react": "file:///mnt/c/Users/snissanka/Documents/workspaces/MyProjects/material-icons-react",
+    "material-icons-react": "file:///home/sithum/IdeaProjects/material-icons-react",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
