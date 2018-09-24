@@ -32,7 +32,7 @@ class MaterialIcon extends Component {
     }
 
     onFontActive(fontFamily, fvd) {
-        const {size, invert, inactive, style, className, icon, color, ...other} = this.processProps();
+        const {icon, styleOverride, clsName, ...other} = this.processProps();
 
         this.setState({element: <i {...other} className={clsName} style={styleOverride} >{icon}</i>})
     }
@@ -48,12 +48,12 @@ class MaterialIcon extends Component {
         const clsName = className || `material-icons ${sizeMapped} ${defaultColor} ${inactiveColor}`;
 
         return {
-            icon, sizeMapped, defaultColor, inactiveColor, propStyle, styleOverride, clsName, ...other
+            icon, styleOverride, clsName, ...other
         }
     }
 
     render() {
-        const {sizeMapped, defaultColor, inactiveColor, propStyle, styleOverride, clsName, ...other} = this.processProps();
+        const {styleOverride, clsName, ...other} = this.processProps();
 
         return (this.state.element || <i {...other} className={clsName} style={styleOverride} ></i>)
     }
