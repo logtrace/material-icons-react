@@ -7,6 +7,7 @@
 * Demo app updated
 * Fix for [#28](https://github.com/logtrace/material-icons-react/issues/28)
 
+
 ## NOTE: Version 1.0.3 release
 
 * Demo app added
