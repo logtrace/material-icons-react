@@ -11,7 +11,7 @@ class MaterialIcon extends Component {
         super(props);
 
         const {preloader} = this.props;
-        
+
         this.state = {
             element: preloader
         }
@@ -44,6 +44,11 @@ class MaterialIcon extends Component {
 
     componentDidUpdate(prevProps) {
         if (prevProps.icon !== this.props.icon) {
+            this.onFontActive();
+        }
+    }
+    componentDidUpdate(prevProps){
+        if(prevProps.icon !== this.props.icon){
             this.onFontActive();
         }
     }
