@@ -10,7 +10,7 @@ class MaterialIcon extends Component {
         super(props);
 
         const {preloader} = this.props;
-        
+
         this.state = {
             element: preloader
         }
@@ -34,6 +34,11 @@ class MaterialIcon extends Component {
     onFontActive(fontFamily, fvd) {
         const {icon, styleOverride, clsName, ...other} = this.processProps();
         this.setState({element: <i {...other} className={clsName} style={styleOverride} >{icon}</i>})
+    }
+    componentDidUpdate(prevProps){
+        if(prevProps.icon !== this.props.icon){
+            this.onFontActive();
+        }
     }
 
     processProps() {
