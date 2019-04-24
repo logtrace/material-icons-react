@@ -120,6 +120,7 @@
 
             var _this = _possibleConstructorReturn(this, (MaterialIcon.__proto__ || Object.getPrototypeOf(MaterialIcon)).call(this, props));
 
+            _this._isMounted = false;
             var preloader = _this.props.preloader;
 
 
@@ -142,7 +143,14 @@
 
         _createClass(MaterialIcon, [{
             key: 'componentDidMount',
-            value: function componentDidMount() {}
+            value: function componentDidMount() {
+                this._isMounted = true;
+            }
+        }, {
+            key: 'componentWillUnmount',
+            value: function componentWillUnmount() {
+                this._isMounted = false;
+            }
         }, {
             key: 'onFontActive',
             value: function onFontActive(fontFamily, fvd) {
@@ -152,11 +160,13 @@
                     clsName = _processProps.clsName,
                     other = _objectWithoutProperties(_processProps, ['icon', 'styleOverride', 'clsName']);
 
-                this.setState({ element: _react2.default.createElement(
-                        'i',
-                        _extends({}, other, { className: clsName, style: styleOverride }),
-                        icon
-                    ) });
+                if (this._isMounted) {
+                    this.setState({ element: _react2.default.createElement(
+                            'i',
+                            _extends({}, other, { className: clsName, style: styleOverride }),
+                            icon
+                        ) });
+                }
             }
         }, {
             key: 'componentDidUpdate',
