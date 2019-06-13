@@ -59,6 +59,7 @@ class MaterialIcon extends Component {
 }
 
 MaterialIcon.propTypes = {
+    color: PropTypes.string,
     icon: PropTypes.string.isRequired,
     size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     invert: PropTypes.bool,
