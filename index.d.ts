@@ -1,8 +1,10 @@
 import React from 'react';
 
+type Size = "tiny" | "small" | "medium" | "large";
+
 interface Props {
     icon: string,
-    size?: number | string,
+    size?: number | Size,
     invert?: bool,
     inactive?: bool,
     color?: string,
