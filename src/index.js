@@ -47,8 +47,9 @@ class MaterialIcon extends Component {
             this.onFontActive();
         }
     }
-    componentDidUpdate(prevProps){
-        if(prevProps.icon !== this.props.icon){
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.icon !== this.props.icon) {
             this.onFontActive();
         }
     }
