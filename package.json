@@ -1,6 +1,7 @@
 {
   "name": "material-icons-react",
   "version": "1.0.3",
+  "types": "./index.d.ts",
   "description": "Google material icons implementation for React",
   "repository": {
     "type": "git",
